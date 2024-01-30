@@ -1,2 +1,2 @@
-# app-metadata
-Sample repository for an app repository
+# Sample app metadata
+Sample repository for an app metadata.
