@@ -2,9 +2,9 @@
   "id": "5506fc3cc2eee3b1a7025c17",
   "label": {
     "id": "5a07275c6c456300070bf965",
-    "key": "entities.attachments.label",
+    "key": "entities.contacts.label",
     "translation": {
-      "en": "Attachments"
+      "en": "Contacts"
     }
   },
   "name": "contacts",
