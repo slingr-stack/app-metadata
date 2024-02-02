@@ -201,12 +201,7 @@
       },
       "parameters": [],
       "operationType": "script",
-      "operationScript": "sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());",
-      "views": [
-        {
-          "$ref": "/views/logFullName"
-        }
-      ]
+      "operationScript": "sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());"
     }
   ]
 }
