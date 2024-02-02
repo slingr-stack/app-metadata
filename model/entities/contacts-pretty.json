@@ -1,0 +1,2452 @@
+{
+  "name": "contacts",
+  "label": {
+    "en": "Contacts"
+  },
+  "type": "data",
+  "fullName": "contacts",
+  "description": "Stores information related to contacts",
+  "version": 53,
+  "settings": {
+      "allowGlobalSearch": false,
+      "abstract": false,
+      "labelCalculationType": "script",
+      "labelCalculationScript": "  var returnValue;\n  returnValue = (record.field(\"firstName\") ? record.field(\"firstName\") : \"\") + \" \" + (record.field(\"lastName\") ? record.field(\"lastName\") : \"\");\n  return returnValue;"
+  },
+  "fields": [
+    {
+      "id": "5506fc3cc2eee3b1a7025c5c",
+      "name": "company",
+      "label": "Company",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "RELATIONSHIP",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "ONE",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025c5d",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025c61",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025c65",
+          "type": "ALWAYS"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025c5f",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025c60",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "id": "5506fc3cc2eee3b1a7025c62",
+        "entityId": "5506fc3cc2eee3b1a7025c16",
+        "entityLabel": "Companies",
+        "entityPath": "Companies",
+        "availableFields": null,
+        "filteringRules": {
+          "id": "56144e4dc2eece83fd579001",
+          "targetEntity": "5506fc3cc2eee3b1a7025c16",
+          "sourceEntity": "5506fc3cc2eee3b1a7025c17",
+          "group": {
+            "id": "5afb1d2fa9b66137c2a25743",
+            "condition": "AND",
+            "rules": [
+              {
+                "id": "56144e4dc2eece83fd579002",
+                "type": "BY_VALUE",
+                "fieldType": "ENTITY_FIELD",
+                "operation": "EQUALS",
+                "targetFieldId": "5506fc3cc2eee3b1a7025c46",
+                "targetFieldPath": "active",
+                "targetFieldPathLabel": "Active",
+                "targetFieldType": "BOOLEAN",
+                "targetFieldAllowedOperations": [
+                  "EQUALS",
+                  "NOT_EQUALS",
+                  "EMPTY",
+                  "NOT_EMPTY",
+                  "CURRENT_USER_FIELD",
+                  "NEAR"
+                ],
+                "values": [
+                  true
+                ]
+              }
+            ]
+          }
+        },
+        "createNewInstanceWhenCopyFromTemplate": true,
+        "deleteCascadeAction": "REMOVE_RELATIONSHIP",
+        "updateLabelCascade": "YES",
+        "updateAvailableFieldsCascade": "YES"
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025c63",
+        "type": "RELATIONSHIP",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": {
+          "id": "5506fc3cc2eee3b1a7025c64",
+          "entity": {
+            "id": "5506fc3cc2eee3b1a7025c16",
+            "name": "companies",
+            "path": "Companies"
+          },
+          "visibleFields": [
+            {
+              "id": "5506fc3cc2eee3b1a7025c68",
+              "type": "BOOLEAN",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "targetOptions": {
+                "id": "55479eec03ce8da38e65e2e2"
+              },
+              "options": {
+                "id": "55479eec03ce8da38e65e2e2",
+                "representation": "SWITCHER",
+                "optionLabel": "YES_NO"
+              },
+              "name": "active",
+              "label": "Active",
+              "path": "active",
+              "pathLabel": "Active",
+              "multiplicity": "ONE",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e0183353b",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da2876d5",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da2876d6",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "tooltip": "Indicates if the customer is active",
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": false,
+                "hasPrependAddOn": false,
+                "hasAppendAddOn": false
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025c46",
+              "useDefaultDisplayOptions": true
+            },
+            {
+              "id": "5506fc3cc2eee3b1a7025c69",
+              "type": "CHOICE",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "targetOptions": {
+                "id": "5506fc3cc2eee3b1a7025c56"
+              },
+              "options": {
+                "id": "5506fc3cc2eee3b1a7025c56",
+                "representation": "DROP_DOWN",
+                "readOnlyRepresentation": "LABEL"
+              },
+              "name": "services",
+              "label": "Services",
+              "path": "services",
+              "pathLabel": "Services",
+              "multiplicity": "MANY",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e0183353c",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da2876d7",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da2876d8",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "tooltip": "Services of the company",
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": false,
+                "hasPrependAddOn": false,
+                "hasAppendAddOn": false
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025c4e",
+              "useDefaultDisplayOptions": true
+            }
+          ],
+          "visibleFieldsList": [
+            {
+              "id": "5506fc3cc2eee3b1a7025c68",
+              "type": "BOOLEAN",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "targetOptions": {
+                "id": "55479eec03ce8da38e65e2e2"
+              },
+              "options": {
+                "id": "55479eec03ce8da38e65e2e2",
+                "representation": "SWITCHER",
+                "optionLabel": "YES_NO"
+              },
+              "name": "active",
+              "label": "Active",
+              "path": "active",
+              "pathLabel": "Active",
+              "multiplicity": "ONE",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e0183353b",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da2876d5",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da2876d6",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "tooltip": "Indicates if the customer is active",
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": false,
+                "hasPrependAddOn": false,
+                "hasAppendAddOn": false
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025c46",
+              "useDefaultDisplayOptions": true,
+              "entityField": {
+                "id": "5506fc3cc2eee3b1a7025c46",
+                "name": "active",
+                "label": "Active",
+                "docsDescription": null,
+                "path": "active",
+                "entityId": "5506fc3cc2eee3b1a7025c16",
+                "entityName": "companies",
+                "entityInstanceVersion": 34,
+                "type": "BOOLEAN",
+                "filterOperations": [
+                  "EQUALS",
+                  "NOT_EQUALS",
+                  "EMPTY",
+                  "NOT_EMPTY",
+                  "CURRENT_USER_FIELD",
+                  "NEAR"
+                ],
+                "multiplicity": "ONE",
+                "affinity": "NONE",
+                "generalRules": {
+                  "id": "5506fc3cc2eee3b1a7025c47",
+                  "defaultValue": {
+                    "id": "5506fc3cc2eee3b1a7025c4d",
+                    "type": "VALUE",
+                    "value": true
+                  },
+                  "required": {
+                    "id": "5506fc3cc2eee3b1a7025c48",
+                    "type": "NEVER"
+                  },
+                  "unique": false,
+                  "indexable": false,
+                  "transientField": false,
+                  "sensitiveData": false,
+                  "calculationType": "NONE",
+                  "syncAccess": true,
+                  "readAccess": {
+                    "id": "5506fc3cc2eee3b1a7025c49",
+                    "type": "ALWAYS"
+                  },
+                  "writeAccess": {
+                    "id": "5506fc3cc2eee3b1a7025c4a",
+                    "type": "ALWAYS"
+                  },
+                  "validation": null
+                },
+                "typeRules": null,
+                "defaultFieldView": {
+                  "id": "5506fc3cc2eee3b1a7025c4c",
+                  "type": "BOOLEAN",
+                  "elementType": "ENTITY_FIELD_VIEW",
+                  "options": {
+                    "id": "55479eec03ce8da38e65e2e2",
+                    "representation": "SWITCHER",
+                    "optionLabel": "YES_NO"
+                  },
+                  "name": "active",
+                  "label": "Active",
+                  "path": "active",
+                  "pathLabel": "Active",
+                  "multiplicity": "ONE",
+                  "generalDisplayOptions": {
+                    "id": "57cf0b61c2eeb57e0183353b",
+                    "readOnly": {
+                      "id": "5b895d510bb2a474da2876d5",
+                      "type": "NEVER"
+                    },
+                    "sorting": "OLDEST_TO_NEWEST",
+                    "valueAlignment": "LEFT",
+                    "paginate": false,
+                    "pageSize": 5,
+                    "visible": {
+                      "id": "5b895d510bb2a474da2876d6",
+                      "type": "ALWAYS"
+                    },
+                    "showLabel": true,
+                    "indentValue": false,
+                    "isOverrideLabel": false,
+                    "tooltip": "Indicates if the customer is active",
+                    "customizeAddButton": false,
+                    "prependAddOnType": "NONE",
+                    "appendAddOnType": "NONE",
+                    "hasValueAlignment": true,
+                    "hasPlaceholder": false,
+                    "hasPrependAddOn": false,
+                    "hasAppendAddOn": false
+                  },
+                  "defaultValue": null,
+                  "isParameter": false,
+                  "fieldId": "5506fc3cc2eee3b1a7025c46",
+                  "useDefaultDisplayOptions": false
+                },
+                "calculated": false,
+                "permissions": [
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bfb",
+                    "label": "Admins",
+                    "name": "admins",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bfb",
+                      "label": "Admins"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025c01",
+                    "label": "Executives",
+                    "name": "executives",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025c01",
+                      "label": "Executives"
+                    }
+                  },
+                  {
+                    "id": "57069c2bc2ee0938d5fdf2d7",
+                    "label": "Managed groups A",
+                    "name": "managedGroupsA",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "NONE",
+                    "group": {
+                      "id": "57069c2bc2ee0938d5fdf2d7",
+                      "label": "Managed groups A"
+                    }
+                  },
+                  {
+                    "id": "57069c2bc2ee0938d5fdf2d8",
+                    "label": "Managed groups B",
+                    "name": "managedGroupsB",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "NONE",
+                    "group": {
+                      "id": "57069c2bc2ee0938d5fdf2d8",
+                      "label": "Managed groups B"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bff",
+                    "label": "Operations",
+                    "name": "operations",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bff",
+                      "label": "Operations"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bfd",
+                    "label": "Sales",
+                    "name": "sales",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c46",
+                      "label": "Active",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bfd",
+                      "label": "Sales"
+                    }
+                  }
+                ]
+              },
+              "level": 0
+            },
+            {
+              "id": "5506fc3cc2eee3b1a7025c69",
+              "type": "CHOICE",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "targetOptions": {
+                "id": "5506fc3cc2eee3b1a7025c56"
+              },
+              "options": {
+                "id": "5506fc3cc2eee3b1a7025c56",
+                "representation": "DROP_DOWN",
+                "readOnlyRepresentation": "LABEL"
+              },
+              "name": "services",
+              "label": "Services",
+              "path": "services",
+              "pathLabel": "Services",
+              "multiplicity": "MANY",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e0183353c",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da2876d7",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da2876d8",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "tooltip": "Services of the company",
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": false,
+                "hasPrependAddOn": false,
+                "hasAppendAddOn": false
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025c4e",
+              "useDefaultDisplayOptions": true,
+              "entityField": {
+                "id": "5506fc3cc2eee3b1a7025c4e",
+                "name": "services",
+                "label": "Services",
+                "docsDescription": null,
+                "path": "services",
+                "entityId": "5506fc3cc2eee3b1a7025c16",
+                "entityName": "companies",
+                "entityInstanceVersion": 34,
+                "type": "CHOICE",
+                "filterOperations": [
+                  "EQUALS",
+                  "NOT_EQUALS",
+                  "EMPTY",
+                  "NOT_EMPTY",
+                  "CURRENT_USER_FIELD",
+                  "NEAR"
+                ],
+                "multiplicity": "MANY",
+                "affinity": "NONE",
+                "generalRules": {
+                  "id": "5506fc3cc2eee3b1a7025c4f",
+                  "defaultValue": {
+                    "id": "5506fc3cc2eee3b1a7025c53",
+                    "type": "NONE"
+                  },
+                  "required": {
+                    "id": "5506fc3cc2eee3b1a7025c50",
+                    "type": "NEVER"
+                  },
+                  "unique": false,
+                  "indexable": false,
+                  "transientField": false,
+                  "sensitiveData": false,
+                  "calculationType": "NONE",
+                  "syncAccess": true,
+                  "readAccess": {
+                    "id": "5506fc3cc2eee3b1a7025c51",
+                    "type": "ALWAYS"
+                  },
+                  "writeAccess": {
+                    "id": "5506fc3cc2eee3b1a7025c52",
+                    "type": "ALWAYS"
+                  },
+                  "validation": null
+                },
+                "typeRules": {
+                  "id": "5506fc3cc2eee3b1a7025c54",
+                  "values": [
+                    {
+                      "id": "5506fc3cc2eee3b1a7025c57",
+                      "name": "CLOUD_COMPUTING",
+                      "label": "Cloud Computing",
+                      "color": "default",
+                      "conditionType": "NONE"
+                    },
+                    {
+                      "id": "5506fc3cc2eee3b1a7025c58",
+                      "name": "WEB_DEVELOPMENT",
+                      "label": "Web Development",
+                      "color": "default",
+                      "conditionType": "NONE"
+                    },
+                    {
+                      "id": "5506fc3cc2eee3b1a7025c59",
+                      "name": "HOSTING",
+                      "label": "Hosting",
+                      "color": "default",
+                      "conditionType": "NONE"
+                    },
+                    {
+                      "id": "5506fc3cc2eee3b1a7025c5a",
+                      "name": "SOA",
+                      "label": "SOA",
+                      "color": "default",
+                      "conditionType": "NONE"
+                    },
+                    {
+                      "id": "5506fc3cc2eee3b1a7025c5b",
+                      "name": "DATA_CENTER",
+                      "label": "Data Center",
+                      "color": "default",
+                      "conditionType": "NONE"
+                    }
+                  ]
+                },
+                "defaultFieldView": {
+                  "id": "5506fc3cc2eee3b1a7025c55",
+                  "type": "CHOICE",
+                  "elementType": "ENTITY_FIELD_VIEW",
+                  "options": {
+                    "id": "5506fc3cc2eee3b1a7025c56",
+                    "representation": "DROP_DOWN",
+                    "readOnlyRepresentation": "LABEL"
+                  },
+                  "name": "services",
+                  "label": "Services",
+                  "path": "services",
+                  "pathLabel": "Services",
+                  "multiplicity": "MANY",
+                  "generalDisplayOptions": {
+                    "id": "57cf0b61c2eeb57e0183353c",
+                    "readOnly": {
+                      "id": "5b895d510bb2a474da2876d7",
+                      "type": "NEVER"
+                    },
+                    "sorting": "OLDEST_TO_NEWEST",
+                    "valueAlignment": "LEFT",
+                    "paginate": false,
+                    "pageSize": 5,
+                    "visible": {
+                      "id": "5b895d510bb2a474da2876d8",
+                      "type": "ALWAYS"
+                    },
+                    "showLabel": true,
+                    "indentValue": false,
+                    "isOverrideLabel": false,
+                    "tooltip": "Services of the company",
+                    "customizeAddButton": false,
+                    "prependAddOnType": "NONE",
+                    "appendAddOnType": "NONE",
+                    "hasValueAlignment": true,
+                    "hasPlaceholder": false,
+                    "hasPrependAddOn": false,
+                    "hasAppendAddOn": false
+                  },
+                  "defaultValue": null,
+                  "isParameter": false,
+                  "fieldId": "5506fc3cc2eee3b1a7025c4e",
+                  "useDefaultDisplayOptions": false
+                },
+                "calculated": false,
+                "permissions": [
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bfb",
+                    "label": "Admins",
+                    "name": "admins",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bfb",
+                      "label": "Admins"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025c01",
+                    "label": "Executives",
+                    "name": "executives",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025c01",
+                      "label": "Executives"
+                    }
+                  },
+                  {
+                    "id": "57069c2bc2ee0938d5fdf2d7",
+                    "label": "Managed groups A",
+                    "name": "managedGroupsA",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "NONE",
+                    "group": {
+                      "id": "57069c2bc2ee0938d5fdf2d7",
+                      "label": "Managed groups A"
+                    }
+                  },
+                  {
+                    "id": "57069c2bc2ee0938d5fdf2d8",
+                    "label": "Managed groups B",
+                    "name": "managedGroupsB",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "NONE",
+                    "group": {
+                      "id": "57069c2bc2ee0938d5fdf2d8",
+                      "label": "Managed groups B"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bff",
+                    "label": "Operations",
+                    "name": "operations",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bff",
+                      "label": "Operations"
+                    }
+                  },
+                  {
+                    "id": "5506fc3cc2eee3b1a7025bfd",
+                    "label": "Sales",
+                    "name": "sales",
+                    "field": {
+                      "id": "5506fc3cc2eee3b1a7025c4e",
+                      "label": "Services",
+                      "actionId": null
+                    },
+                    "permission": "READ_WRITE",
+                    "group": {
+                      "id": "5506fc3cc2eee3b1a7025bfd",
+                      "label": "Sales"
+                    }
+                  }
+                ]
+              },
+              "level": 0
+            }
+          ],
+          "sortField": "id",
+          "sortFieldLabel": "Current Record",
+          "sortType": "DESC",
+          "enableLink": false,
+          "allowToCreateNewRecord": false,
+          "allowToEditRecord": false,
+          "representation": "DROP_DOWN",
+          "readOnlyRepresentation": "PLAIN_TEXT",
+          "fieldsLayout": "AUTOMATIC",
+          "customLayoutType": "PX",
+          "allowToWrapLabel": false
+        },
+        "name": "company",
+        "label": "Company",
+        "pathLabel": "Company",
+        "multiplicity": "ONE",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e01833549",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876f1",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da2876f2",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": false,
+          "hasPrependAddOn": false,
+          "hasAppendAddOn": false
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025c5c",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025c5c",
+            "label": "Company",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d28",
+      "name": "firstName",
+      "label": "First Name",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "TEXT",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "GREATER",
+        "GREATER_OR_EQUALS",
+        "LESS",
+        "LESS_OR_EQUALS",
+        "BETWEEN",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "ONE",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d29",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d2d",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d31",
+          "type": "ALWAYS"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d2b",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d2c",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "id": "5506fc3cc2eee3b1a7025d2e",
+        "maxLength": null,
+        "minLength": null,
+        "exactLength": null,
+        "regularExpression": null,
+        "regularExpressionHint": null,
+        "isRegularExpression": false,
+        "isCaseInsensitive": false
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d2f",
+        "type": "TEXT",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": {
+          "id": "5506fc3cc2eee3b1a7025d30",
+          "representation": "INPUT_BOX",
+          "numberOfRows": null,
+          "isLimitNumberOfCharacters": false,
+          "limitNumberOfCharacters": null,
+          "conditionalBackgroundColors": null,
+          "password": false
+        },
+        "name": "firstName",
+        "label": "First Name",
+        "pathLabel": "First Name",
+        "multiplicity": "ONE",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e0183354a",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876f3",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da2876f4",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": true,
+          "hasPrependAddOn": true,
+          "hasAppendAddOn": true
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d28",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d28",
+            "label": "First Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d32",
+      "name": "lastName",
+      "label": "Last Name",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "TEXT",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "GREATER",
+        "GREATER_OR_EQUALS",
+        "LESS",
+        "LESS_OR_EQUALS",
+        "BETWEEN",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "ONE",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d33",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d37",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d3b",
+          "type": "ALWAYS"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d35",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d36",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "id": "5506fc3cc2eee3b1a7025d38",
+        "maxLength": null,
+        "minLength": null,
+        "exactLength": null,
+        "regularExpression": null,
+        "regularExpressionHint": null,
+        "isRegularExpression": false,
+        "isCaseInsensitive": false
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d39",
+        "type": "TEXT",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": {
+          "id": "5506fc3cc2eee3b1a7025d3a",
+          "representation": "INPUT_BOX",
+          "numberOfRows": null,
+          "isLimitNumberOfCharacters": false,
+          "limitNumberOfCharacters": null,
+          "conditionalBackgroundColors": null,
+          "password": false
+        },
+        "name": "lastName",
+        "label": "Last Name",
+        "pathLabel": "Last Name",
+        "multiplicity": "ONE",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e0183354b",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876f5",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da2876f6",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": true,
+          "hasPrependAddOn": true,
+          "hasAppendAddOn": true
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d32",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d32",
+            "label": "Last Name",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d3c",
+      "name": "email",
+      "label": "Email",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "EMAIL",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "GREATER",
+        "GREATER_OR_EQUALS",
+        "LESS",
+        "LESS_OR_EQUALS",
+        "BETWEEN",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "ONE",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d3d",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d41",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d43",
+          "type": "ALWAYS"
+        },
+        "unique": true,
+        "indexable": true,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d3f",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d40",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": null,
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d42",
+        "type": "EMAIL",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": null,
+        "name": "email",
+        "label": "Email",
+        "pathLabel": "Email",
+        "multiplicity": "ONE",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e0183354c",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876f7",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da2876f8",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": true,
+          "hasPrependAddOn": true,
+          "hasAppendAddOn": true
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d3c",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d3c",
+            "label": "Email",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d54",
+      "name": "phoneNumbers",
+      "label": "Phone Numbers",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "PHONE",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "GREATER",
+        "GREATER_OR_EQUALS",
+        "LESS",
+        "LESS_OR_EQUALS",
+        "BETWEEN",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "MANY",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d55",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d59",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d56",
+          "type": "NEVER"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d57",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d58",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "id": "5506fc3cc2eee3b1a7025d5a",
+        "international": false
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d5b",
+        "type": "PHONE",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": null,
+        "name": "phoneNumbers",
+        "label": "Phone Numbers",
+        "pathLabel": "Phone Numbers",
+        "multiplicity": "MANY",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e0183354f",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876fd",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da2876fe",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": true,
+          "hasPrependAddOn": true,
+          "hasAppendAddOn": true
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d54",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d54",
+            "label": "Phone Numbers",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d5c",
+      "name": "ipAddress",
+      "label": "IP Address",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "TEXT",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "LIKE",
+        "GREATER",
+        "GREATER_OR_EQUALS",
+        "LESS",
+        "LESS_OR_EQUALS",
+        "BETWEEN",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "ONE",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d5d",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d61",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d5e",
+          "type": "NEVER"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d5f",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d60",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "id": "57d6ec93ba78920f3d4f4595",
+        "maxLength": null,
+        "minLength": null,
+        "exactLength": null,
+        "regularExpression": null,
+        "regularExpressionHint": null,
+        "isRegularExpression": false,
+        "isCaseInsensitive": false
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d62",
+        "type": "TEXT",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": {
+          "id": "57d6ec93ba78920f3d4f4594",
+          "representation": "INPUT_BOX",
+          "numberOfRows": null,
+          "isLimitNumberOfCharacters": false,
+          "limitNumberOfCharacters": null,
+          "conditionalBackgroundColors": null,
+          "password": false
+        },
+        "name": "ipAddress",
+        "label": "IP Address",
+        "pathLabel": "IP Address",
+        "multiplicity": "ONE",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e01833550",
+          "readOnly": {
+            "id": "5b895d510bb2a474da2876ff",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da287700",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": true,
+          "hasPlaceholder": true,
+          "hasPrependAddOn": true,
+          "hasAppendAddOn": true
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d5c",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d5c",
+            "label": "IP Address",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5506fc3cc2eee3b1a7025d63",
+      "name": "addresses",
+      "label": "Addresses",
+      "docsDescription": null,
+      "entityId": "5506fc3cc2eee3b1a7025c17",
+      "entityName": "contacts",
+      "entityInstanceVersion": 53,
+      "type": "NESTED_FIELDS",
+      "filterOperations": [
+        "EQUALS",
+        "NOT_EQUALS",
+        "EMPTY",
+        "NOT_EMPTY",
+        "CURRENT_USER_FIELD",
+        "NEAR"
+      ],
+      "multiplicity": "MANY",
+      "affinity": "NONE",
+      "generalRules": {
+        "id": "5506fc3cc2eee3b1a7025d64",
+        "defaultValue": {
+          "id": "5506fc3cc2eee3b1a7025d68",
+          "type": "NONE"
+        },
+        "required": {
+          "id": "5506fc3cc2eee3b1a7025d65",
+          "type": "NEVER"
+        },
+        "unique": false,
+        "indexable": false,
+        "transientField": false,
+        "sensitiveData": false,
+        "calculationType": "NONE",
+        "syncAccess": true,
+        "readAccess": {
+          "id": "5506fc3cc2eee3b1a7025d66",
+          "type": "ALWAYS"
+        },
+        "writeAccess": {
+          "id": "5506fc3cc2eee3b1a7025d67",
+          "type": "ALWAYS"
+        },
+        "validation": null
+      },
+      "typeRules": {
+        "nestedFields": [
+          {
+            "id": "5506fc3cc2eee3b1a7025d6c",
+            "name": "addressLine1",
+            "label": "Address Line 1",
+            "docsDescription": null,
+            "entityId": "5506fc3cc2eee3b1a7025c17",
+            "entityName": "contacts",
+            "entityInstanceVersion": 53,
+            "type": "TEXT",
+            "filterOperations": [
+              "EQUALS",
+              "NOT_EQUALS",
+              "EMPTY",
+              "NOT_EMPTY",
+              "LIKE",
+              "GREATER",
+              "GREATER_OR_EQUALS",
+              "LESS",
+              "LESS_OR_EQUALS",
+              "BETWEEN",
+              "CURRENT_USER_FIELD",
+              "NEAR"
+            ],
+            "multiplicity": "ONE",
+            "affinity": "NONE",
+            "generalRules": {
+              "id": "5506fc3cc2eee3b1a7025d6d",
+              "defaultValue": {
+                "id": "5506fc3cc2eee3b1a7025d71",
+                "type": "NONE"
+              },
+              "required": {
+                "id": "5506fc3cc2eee3b1a7025d6e",
+                "type": "NEVER"
+              },
+              "unique": false,
+              "indexable": false,
+              "transientField": false,
+              "sensitiveData": false,
+              "calculationType": "NONE",
+              "syncAccess": true,
+              "readAccess": {
+                "id": "5506fc3cc2eee3b1a7025d6f",
+                "type": "ALWAYS"
+              },
+              "writeAccess": {
+                "id": "5506fc3cc2eee3b1a7025d70",
+                "type": "ALWAYS"
+              },
+              "validation": null
+            },
+            "typeRules": {
+              "id": "5506fc3cc2eee3b1a7025d72",
+              "maxLength": null,
+              "minLength": null,
+              "exactLength": null,
+              "regularExpression": null,
+              "regularExpressionHint": null,
+              "isRegularExpression": false,
+              "isCaseInsensitive": false
+            },
+            "defaultFieldView": {
+              "id": "5506fc3cc2eee3b1a7025d73",
+              "type": "TEXT",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "options": {
+                "id": "5506fc3cc2eee3b1a7025d74",
+                "representation": "INPUT_BOX",
+                "numberOfRows": null,
+                "isLimitNumberOfCharacters": false,
+                "limitNumberOfCharacters": null,
+                "conditionalBackgroundColors": null,
+                "password": false
+              },
+              "name": "addressLine1",
+              "label": "Address Line 1",
+              "pathLabel": "Addresses > Address Line 1",
+              "multiplicity": "ONE",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e01833552",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da287703",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da287704",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": true,
+                "hasPrependAddOn": true,
+                "hasAppendAddOn": true
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025d6c",
+              "useDefaultDisplayOptions": false
+            },
+            "calculated": false,
+            "parentFieldId": "5506fc3cc2eee3b1a7025d63",
+            "permissions": [
+              {
+                "id": "5506fc3cc2eee3b1a7025bfb",
+                "label": "Admins",
+                "name": "admins",
+                "field": {
+                  "id": "5506fc3cc2eee3b1a7025d6c",
+                  "label": "Address Line 1",
+                  "actionId": null
+                },
+                "permission": "PARENT",
+                "group": {
+                  "id": "5506fc3cc2eee3b1a7025bfb",
+                  "label": "Admins"
+                }
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025c01",
+                "name": "executives",
+                "label": "Executives",
+                "permission": "PARENT"
+              },
+              {
+                "id": "57069c2bc2ee0938d5fdf2d7",
+                "label": "Managed groups A",
+                "name": "managedGroupsA",
+                "field": {
+                  "id": "5506fc3cc2eee3b1a7025d6c",
+                  "label": "Address Line 1",
+                  "actionId": null
+                },
+                "permission": "PARENT",
+                "group": {
+                  "id": "57069c2bc2ee0938d5fdf2d7",
+                  "label": "Managed groups A"
+                }
+              },
+              {
+                "id": "57069c2bc2ee0938d5fdf2d8",
+                "name": "managedGroupsB",
+                "label": "Managed groups B",
+                "permission": "PARENT"
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025bff",
+                "name": "operations",
+                "label": "Operations",
+                "permission": "PARENT"
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025bfd",
+                "name": "sales",
+                "label": "Sales",
+                "permission": "PARENT"
+              }
+            ],
+            "setAllowSorting": true
+          },
+          {
+            "id": "5506fc3cc2eee3b1a7025d87",
+            "name": "state",
+            "label": "State",
+            "docsDescription": null,
+            "entityId": "5506fc3cc2eee3b1a7025c17",
+            "entityName": "contacts",
+            "entityInstanceVersion": 53,
+            "type": "CHOICE",
+            "filterOperations": [
+              "EQUALS",
+              "NOT_EQUALS",
+              "EMPTY",
+              "NOT_EMPTY",
+              "CURRENT_USER_FIELD",
+              "NEAR"
+            ],
+            "multiplicity": "ONE",
+            "affinity": "NONE",
+            "generalRules": {
+              "id": "5506fc3cc2eee3b1a7025d88",
+              "defaultValue": {
+                "id": "5506fc3cc2eee3b1a7025d8c",
+                "type": "NONE"
+              },
+              "required": {
+                "id": "5506fc3cc2eee3b1a7025d89",
+                "type": "NEVER"
+              },
+              "unique": false,
+              "indexable": false,
+              "transientField": false,
+              "sensitiveData": true,
+              "calculationType": "NONE",
+              "syncAccess": true,
+              "readAccess": {
+                "id": "5506fc3cc2eee3b1a7025d8a",
+                "type": "ALWAYS"
+              },
+              "writeAccess": {
+                "id": "5506fc3cc2eee3b1a7025d8b",
+                "type": "ALWAYS"
+              },
+              "validation": null
+            },
+            "typeRules": {
+              "id": "5506fc3cc2eee3b1a7025d8d",
+              "values": [
+                {
+                  "id": "5506fc3cc2eee3b1a7025d90",
+                  "name": "AZ",
+                  "label": "Arizona",
+                  "color": "default",
+                  "conditionType": "NONE"
+                },
+                {
+                  "id": "5506fc3cc2eee3b1a7025d91",
+                  "name": "CO",
+                  "label": "Colorado",
+                  "color": "default",
+                  "conditionType": "NONE"
+                },
+                {
+                  "id": "5506fc3cc2eee3b1a7025d92",
+                  "name": "NY",
+                  "label": "New York",
+                  "color": "default",
+                  "conditionType": "NONE"
+                }
+              ]
+            },
+            "defaultFieldView": {
+              "id": "5506fc3cc2eee3b1a7025d8e",
+              "type": "CHOICE",
+              "elementType": "ENTITY_FIELD_VIEW",
+              "options": {
+                "id": "5506fc3cc2eee3b1a7025d8f",
+                "representation": "DROP_DOWN",
+                "readOnlyRepresentation": "LABEL"
+              },
+              "name": "state",
+              "label": "State",
+              "pathLabel": "Addresses > State",
+              "multiplicity": "ONE",
+              "generalDisplayOptions": {
+                "id": "57cf0b61c2eeb57e01833555",
+                "readOnly": {
+                  "id": "5b895d510bb2a474da287709",
+                  "type": "NEVER"
+                },
+                "sorting": "OLDEST_TO_NEWEST",
+                "valueAlignment": "LEFT",
+                "paginate": false,
+                "pageSize": 5,
+                "visible": {
+                  "id": "5b895d510bb2a474da28770a",
+                  "type": "ALWAYS"
+                },
+                "showLabel": true,
+                "indentValue": false,
+                "isOverrideLabel": false,
+                "customizeAddButton": false,
+                "prependAddOnType": "NONE",
+                "appendAddOnType": "NONE",
+                "hasValueAlignment": true,
+                "hasPlaceholder": false,
+                "hasPrependAddOn": false,
+                "hasAppendAddOn": false
+              },
+              "defaultValue": null,
+              "isParameter": false,
+              "fieldId": "5506fc3cc2eee3b1a7025d87",
+              "useDefaultDisplayOptions": false
+            },
+            "calculated": false,
+            "parentFieldId": "5506fc3cc2eee3b1a7025d63",
+            "permissions": [
+              {
+                "id": "5506fc3cc2eee3b1a7025bfb",
+                "label": "Admins",
+                "name": "admins",
+                "field": {
+                  "id": "5506fc3cc2eee3b1a7025d87",
+                  "label": "State",
+                  "actionId": null
+                },
+                "permission": "PARENT",
+                "group": {
+                  "id": "5506fc3cc2eee3b1a7025bfb",
+                  "label": "Admins"
+                }
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025c01",
+                "name": "executives",
+                "label": "Executives",
+                "permission": "PARENT"
+              },
+              {
+                "id": "57069c2bc2ee0938d5fdf2d7",
+                "label": "Managed groups A",
+                "name": "managedGroupsA",
+                "field": {
+                  "id": "5506fc3cc2eee3b1a7025d87",
+                  "label": "State",
+                  "actionId": null
+                },
+                "permission": "PARENT",
+                "group": {
+                  "id": "57069c2bc2ee0938d5fdf2d7",
+                  "label": "Managed groups A"
+                }
+              },
+              {
+                "id": "57069c2bc2ee0938d5fdf2d8",
+                "name": "managedGroupsB",
+                "label": "Managed groups B",
+                "permission": "PARENT"
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025bff",
+                "name": "operations",
+                "label": "Operations",
+                "permission": "PARENT"
+              },
+              {
+                "id": "5506fc3cc2eee3b1a7025bfd",
+                "name": "sales",
+                "label": "Sales",
+                "permission": "PARENT"
+              }
+            ],
+            "setAllowSorting": true
+          }
+        ],
+        "labelType": "FIELD",
+        "labelFieldId": "5506fc3cc2eee3b1a7025d87",
+        "labelFieldName": "state",
+        "labelFieldLabel": "State"
+      },
+      "defaultFieldView": {
+        "id": "5506fc3cc2eee3b1a7025d6a",
+        "type": "NESTED_FIELDS",
+        "elementType": "ENTITY_FIELD_VIEW",
+        "options": {
+          "id": "5506fc3cc2eee3b1a7025d6b",
+          "indentNestedFields": true,
+          "innerFieldsLayout": "AUTOMATIC",
+          "customLayout": null,
+          "showAsAccordion": false,
+          "accordionExpanded": true
+        },
+        "name": "addresses",
+        "label": "Addresses",
+        "pathLabel": "Addresses",
+        "multiplicity": "MANY",
+        "generalDisplayOptions": {
+          "id": "57cf0b61c2eeb57e01833551",
+          "readOnly": {
+            "id": "5b895d510bb2a474da287701",
+            "type": "NEVER"
+          },
+          "sorting": "OLDEST_TO_NEWEST",
+          "valueAlignment": "LEFT",
+          "paginate": false,
+          "pageSize": 5,
+          "visible": {
+            "id": "5b895d510bb2a474da287702",
+            "type": "ALWAYS"
+          },
+          "showLabel": true,
+          "indentValue": false,
+          "isOverrideLabel": false,
+          "customizeAddButton": false,
+          "prependAddOnType": "NONE",
+          "appendAddOnType": "NONE",
+          "hasValueAlignment": false,
+          "hasPlaceholder": false,
+          "hasPrependAddOn": false,
+          "hasAppendAddOn": false
+        },
+        "defaultValue": null,
+        "isParameter": false,
+        "fieldId": "5506fc3cc2eee3b1a7025d63",
+        "useDefaultDisplayOptions": false
+      },
+      "calculated": false,
+      "permissions": [
+        {
+          "id": "5506fc3cc2eee3b1a7025bfb",
+          "label": "Admins",
+          "name": "admins",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfb",
+            "label": "Admins"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025c01",
+          "label": "Executives",
+          "name": "executives",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025c01",
+            "label": "Executives"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d7",
+          "label": "Managed groups A",
+          "name": "managedGroupsA",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d7",
+            "label": "Managed groups A"
+          }
+        },
+        {
+          "id": "57069c2bc2ee0938d5fdf2d8",
+          "label": "Managed groups B",
+          "name": "managedGroupsB",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "NONE",
+          "group": {
+            "id": "57069c2bc2ee0938d5fdf2d8",
+            "label": "Managed groups B"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bff",
+          "label": "Operations",
+          "name": "operations",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bff",
+            "label": "Operations"
+          }
+        },
+        {
+          "id": "5506fc3cc2eee3b1a7025bfd",
+          "label": "Sales",
+          "name": "sales",
+          "field": {
+            "id": "5506fc3cc2eee3b1a7025d63",
+            "label": "Addresses",
+            "actionId": null
+          },
+          "permission": "READ_WRITE",
+          "group": {
+            "id": "5506fc3cc2eee3b1a7025bfd",
+            "label": "Sales"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "5506fc3cc2eee3b1a7025d9c",
+      "entity": {
+        "id": "5506fc3cc2eee3b1a7025c17",
+        "name": "contacts"
+      },
+      "entityInstanceVersion": 53,
+      "label": "Detect IP",
+      "name": "detectIp",
+      "type": "ONE_RECORD",
+      "docsDescription": null,
+      "preconditionType": "NONE",
+      "visible": {
+        "id": "5e00b50bba78fa2c0b3d3a8e",
+        "type": "ALWAYS"
+      },
+      "actionsType": "SCRIPT",
+      "actions": {
+        "id": "55310edb44aec7a48467a107",
+        "code": "  var ip = Math.floor((Math.random()*250)+1) + \".\" + Math.floor((Math.random()*250)+1) + \".\" + Math.floor((Math.random()*250)+1) + \".\" + Math.floor((Math.random()*250)+1);\n  record.field('ipAddress').val(ip);\n  sys.old.data.save(record);\n  setResult({newIp: ip});"
+      },
+      "executeInBackground": false,
+      "avoidTriggerUiEvents": false,
+      "restrictToOnlyOneRecord": false,
+      "saveDataBeforeRunning": true,
+      "resultAsResponse": false,
+      "views": [
+        {
+          "id": "58fe07d1e4a8324888f538a2",
+          "fields": null
+        }
+      ],
+      "actionParameters": null,
+      "defaultView": {
+        "id": "58fe07d1e4a8324888f538a2"
+      }
+    }
+  ],
+  "indexesMap": [
+    {
+      "name": "data.email",
+      "type": "NORMAL",
+      "unique": true,
+      "affectedFields": [
+        {
+          "fieldPath": "email",
+          "fieldPathLabel": "Email"
+        }
+      ]
+    }
+  ],
+  "userEventRecordCreated": true,
+  "userEventActionExecuted": true,
+  "auditLogs": false,
+  "userEventRecordDeleted": true,
+  "behaviorDuringRegeneration": "HOLD_QUERIES",
+  "calculateDataConditionType": "ALWAYS",
+  "childEntities": [],
+  "customDeletion": null,
+  "enableDetailedLogging": false,
+  "userEventRecordChanged": true,
+  "scriptEventRecordCreated": true,
+  "systemEventRefactorings": false,
+  "systemEventCascadeUpdates": false,
+  "cronExpression": "0 0 0 ? * SAT *",
+  "scriptEventRecordDeleted": true,
+  "userEventRecordChangedIgnoredFields": [],
+  "scriptEventActionExecuted": true,
+  "scriptEventRecordChanged": true
+}
