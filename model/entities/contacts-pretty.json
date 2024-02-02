@@ -11,7 +11,24 @@
       "allowGlobalSearch": false,
       "abstract": false,
       "labelCalculationType": "script",
-      "labelCalculationScript": "  var returnValue;\n  returnValue = (record.field(\"firstName\") ? record.field(\"firstName\") : \"\") + \" \" + (record.field(\"lastName\") ? record.field(\"lastName\") : \"\");\n  return returnValue;"
+      "labelCalculationScript": "  var returnValue;\n  returnValue = (record.field(\"firstName\") ? record.field(\"firstName\") : \"\") + \" \" + (record.field(\"lastName\") ? record.field(\"lastName\") : \"\");\n  return returnValue;",
+
+    "userEventRecordCreated": true,
+    "userEventActionExecuted": true,
+    "auditLogs": false,
+    "userEventRecordDeleted": true,
+    "behaviorDuringRegeneration": "HOLD_QUERIES",
+    "calculateDataConditionType": "ALWAYS",
+    "customDeletion": null,
+    "enableDetailedLogging": false,
+    "userEventRecordChanged": true,
+    "scriptEventRecordCreated": true,
+    "systemEventRefactorings": false,
+    "systemEventCascadeUpdates": false,
+    "scriptEventRecordDeleted": true,
+    "userEventRecordChangedIgnoredFields": [],
+    "scriptEventActionExecuted": true,
+    "scriptEventRecordChanged": true
   },
   "fields": [
     {
@@ -2430,23 +2447,5 @@
         }
       ]
     }
-  ],
-  "userEventRecordCreated": true,
-  "userEventActionExecuted": true,
-  "auditLogs": false,
-  "userEventRecordDeleted": true,
-  "behaviorDuringRegeneration": "HOLD_QUERIES",
-  "calculateDataConditionType": "ALWAYS",
-  "childEntities": [],
-  "customDeletion": null,
-  "enableDetailedLogging": false,
-  "userEventRecordChanged": true,
-  "scriptEventRecordCreated": true,
-  "systemEventRefactorings": false,
-  "systemEventCascadeUpdates": false,
-  "cronExpression": "0 0 0 ? * SAT *",
-  "scriptEventRecordDeleted": true,
-  "userEventRecordChangedIgnoredFields": [],
-  "scriptEventActionExecuted": true,
-  "scriptEventRecordChanged": true
+  ]
 }
