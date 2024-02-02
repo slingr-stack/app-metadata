@@ -119,7 +119,7 @@
           - Operator: equals
           - Value: yes
     - Cascade operations:
-      - Delete policy: removeRelationship
+      - Delete policy: remove relationship
       - Update label: yes
       - Update available fields: yes
   - Display options:
