@@ -1,0 +1,159 @@
+name: contacts
+label:
+  en: Contacts
+description: Stores information related to contacts
+type: data
+fullName: contacts
+version: 53
+settings:
+  allowGlobalSearch: false
+  abstract: false
+  labelCalculationType: script
+  labelCalculationScript: "return record.field('firstName') + ' ' + record.field('lastName');"
+  auditLogs:
+    enabled: true
+    userContext:
+      recordCreated: true
+      recordUpdated: true
+      recordDeleted: true
+      actionExecuted: true
+      ignoredField: [ ]
+    scriptContext:
+      recordCreated: true
+      recordUpdated: true
+      recordDeleted: true
+      actionExecuted: true
+      ignoredField: [ ]
+    systemContext:
+      cascadeUpdates: false
+      refactorings: false
+    enableDetailedLogging: false
+  indexes:
+    - name: data.email
+      type: regular
+      unique: true
+      fields:
+        - name: email
+          label: Email
+fields:
+  - name: firstName
+    label:
+      en: First name
+    description: The first name of the contact
+    type: text
+    multiplicity: one
+    rules:
+      defaultValue: none
+      required: always
+      unique: false
+      indexable: false
+      transient: false
+      sensitive: false
+      calculated: false
+      readAccess: always
+      writeAccess: always
+    typeRules:
+      maxLength: null
+      minLength: null
+      exactLength: null
+      regularExpression: null
+      regularExpressionHint: null
+    displayOptions:
+      elementType: entityFieldView
+      readOnly: never
+      visible: always
+      showLabel: true
+      valueAlignment: left
+      representation: inputBox
+      limitNumberOfCharacters: false
+  - name: lastName
+    label:
+      en: Last name
+    description: The last name of the contact
+    type: text
+    multiplicity: one
+    rules:
+      defaultValue: none
+      required: always
+      unique: false
+      indexable: false
+      transient: false
+      sensitive: false
+      calculated: false
+      readAccess: always
+      writeAccess: always
+    typeRules:
+      maxLength: null
+      minLength: null
+      exactLength: null
+      regularExpression: null
+      regularExpressionHint: null
+    displayOptions:
+      elementType: entityFieldView
+      readOnly: never
+      visible: always
+      showLabel: true
+      valueAlignment: left
+      representation: inputBox
+      limitNumberOfCharacters: false
+  - name: company
+    label:
+      en: Company
+    description: The company that the contact belongs to
+    type: relationship
+    multiplicity: one
+    rules:
+      defaultValue: none
+      required: always
+      unique: false
+      indexable: false
+      transient: false
+      sensitive: false
+      calculated: false
+      readAccess: always
+      writeAccess: always
+    typeRules:
+      targetEntity: companies
+      filter:
+        condition: AND
+        rules:
+          - field: active
+            operator: equals
+            value: true
+      cascadeOperations:
+        deletePolicy: removeRelationship
+        updateLabel: yes
+        updateAvailableFields: yes
+    displayOptions:
+      elementType: entityFieldView
+      readOnly: never
+      visible: always
+      showLabel: true
+      valueAlignment: left
+      representation: dropDown
+      readOnlyRepresentation: plainText
+      sortField: id
+      sortType: desc
+      enableLink: false
+      allowToCreateNewRecord: false
+      allowToEditRecord: false
+      visibleFields:
+        - name: active
+          useDefaultDisplayOptions: true
+        - name: services
+          useDefaultDisplayOptions: true
+actions:
+  - name: logFullName
+    label:
+      en: Log full name
+    description: Logs the full name of the contact
+    type: oneRecord
+    settings:
+      precondition: none
+      visible: always
+      async: false
+      saveLinkedParameters: false
+      resultAsResponse: false
+    parameters: [ ]
+    operationType: script
+    operationScript: "sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());"
