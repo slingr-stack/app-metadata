@@ -17,13 +17,13 @@ settings:
       recordUpdated: true
       recordDeleted: true
       actionExecuted: true
-      ignoredField: [ ]
+      ignoredFields: [ ]
     scriptContext:
       recordCreated: true
       recordUpdated: true
       recordDeleted: true
       actionExecuted: true
-      ignoredField: [ ]
+      ignoredFields: [ ]
     systemContext:
       cascadeUpdates: false
       refactorings: false
