@@ -1,11 +1,14 @@
-# Entity: Contacts
+# Entity: contacts
 
+- **Label:**
+  - English: Contacts
 - **Description:** stores contact information
 - **Type:** data
 - **Full nme:** contacts
 - **Version:** 53
 
 ## Settings
+
 - **Allow global search:** no
 - **Abstract:** no
 - **Label calculation type:** script
@@ -38,7 +41,10 @@
         - Label: Email
 
 ## Fields
-1. **First name**
+
+- **firstName**
+  - Label:
+    - English: First name
   - Type: text
   - Multiplicity: one
   - Description: The first name of the contact
@@ -66,8 +72,10 @@
     - Value alignment: left
     - Representation: input box
     - Limit number of characters: no
-
-2. **Last Name**
+    
+- **lastName**
+  - Label:
+    - English: Last name
   - Type: text
   - Multiplicity: one
   - Description: The last name of the contact
@@ -96,7 +104,9 @@
     - Representation: input box
     - Limit number of characters: no
 
-3. **Company**
+- **company**
+  - Label:
+    - English: Company
   - Type: relationship
   - Multiplicity: one
   - Description: The company that the contact belongs to
@@ -142,7 +152,9 @@
         - Use default display options: yes
 
 ## Actions
-1. **Log full name**
+- **logFullName**
+  - Label:
+    - English: Log full name
   - Type: oneRecord
   - Description: Logs the full name of the contact
   - Settings:
