@@ -122,6 +122,33 @@
       }
     },
     {
+      "name": "email",
+      "label": {
+        "en": "Email"
+      },
+      "description": "Email of the contact",
+      "type": "email",
+      "multiplicity": "one",
+      "rules": {
+        "defaultValue": "none",
+        "required": "always",
+        "unique": false,
+        "indexable": false,
+        "transient": false,
+        "sensitive": false,
+        "calculated": false,
+        "readAccess": "always",
+        "writeAccess": "always"
+      },
+      "displayOptions": {
+        "elementType": "entityFieldView",
+        "readOnly": "never",
+        "visible": "always",
+        "showLabel": true,
+        "valueAlignment": "left"
+      }
+    },
+    {
       "name": "company",
       "label": {
         "en": "Company"
@@ -186,11 +213,11 @@
   ],
   "actions": [
     {
-      "name": "logFullName",
+      "name": "logFullNameAndEmail",
       "label": {
-        "en": "Log full name"
+        "en": "Log full name and email"
       },
-      "description": "Logs the full name of the contact",
+      "description": "Logs the full name and email of the contact",
       "type": "oneRecord",
       "settings": {
         "precondition": "none",
@@ -201,7 +228,7 @@
       },
       "parameters": [],
       "operationType": "script",
-      "operationScript": "sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());"
+      "operationScript": "sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());\nsys.logs.info('The email is: ' + record.field('email').val());"
     }
   ]
 }
