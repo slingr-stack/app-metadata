@@ -107,28 +107,6 @@
 - **company**
   - Label:
     - English: Company
-3. **Email**
-  - Type: email
-  - Multiplicity: one
-  - Description: The email of the contact
-  - Rules:
-    - Default value: none
-    - Required: always
-    - Unique: no
-    - Indexable: no
-    - Transient: no
-    - Sensitive: no
-    - Calculated: no
-    - Read access: always
-    - Write access: always
-  - Display options:
-    - Element type: entity field view
-    - Read only: never
-    - Visible: always
-    - Show label: yes
-    - Value alignment: left
-
-4. **Company**
   - Type: relationship
   - Multiplicity: one
   - Description: The company that the contact belongs to
@@ -179,9 +157,6 @@
     - English: Log full name
   - Type: oneRecord
   - Description: Logs the full name of the contact
-1. **Log full name and email**
-  - Type: one record
-  - Description: Logs the full name of the contact and the email.
   - Settings:
     - Precondition: none
     - Visible: always
@@ -192,5 +167,4 @@
   - Operation script: 
   ```javascript
   sys.logs.info('The full name is: ' + record.field('firstName').val() + ' ' + record.field('lastName').val());
-  sys.logs.info('The email is: ' + record.field('email').val());
   ```
